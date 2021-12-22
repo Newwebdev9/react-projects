@@ -5,25 +5,43 @@ class Input extends React.Component {
     super();
     this.state = {
       Username: '',
+      password: '',
     };
   }
   handleChange = (e) => {
     this.setState({
-      username: e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
-  handleClick = () => {
+
+  handleClick = (e) => {
+    e.preventDefault();
     console.log(this.state.Username);
+    console.log(this.state.password);
+    this.setState({
+      Username: '',
+      password: '',
+    });
   };
   render() {
-    console.log(this.state.Username);
     return (
       <div>
-        <input
-          type="text"
-          onChange={this.handleChange}
-          placeholder="Enter Username"
-        />
+        <p>
+          <input
+            type="text"
+            onChange={this.handleChange}
+            name="Username"
+            placeholder="Enter Username"
+          />
+        </p>
+        <p>
+          <input
+            tupe="text"
+            onChange={this.handleChange}
+            name="password"
+            placeholder="Enter password"
+          />
+        </p>
         <button onClick={this.handleClick}> Submit </button>
       </div>
     );

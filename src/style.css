@@ -1,9 +1,15 @@
-h1,
-p {
-  font-family: Lato;
-}
 .App {
   font-family: sans-serif;
   text-align: center;
-  color: aqua;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+}
+.Link {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
 }
